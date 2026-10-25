@@ -1,6 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
-
+// vem da je koda zelo messy, js sem tudi
+//-Albin
 public class MStrider {
     public static void main(String[] args) {
         

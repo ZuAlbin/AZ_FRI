@@ -24,6 +24,6 @@ public class NGuess {
 		    } else {
 		    	System.out.println("Just right, " + Thought + " was the number");
 		    }
-		}
+		} while (Guess != Thought);
 	}
-	
+}
