@@ -1,0 +1,1 @@
+pliz ne bit zloben
