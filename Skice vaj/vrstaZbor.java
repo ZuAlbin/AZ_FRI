@@ -16,12 +16,22 @@ public class vrstaZbor {
 			
 		}
 		
+		int pravilni = 0;
+		
 		for (int i = 0; i < dolzina; i++ ) {
 			
-			System.out.println(zbor[i]);
+			if ( zbor[i-1] <= zbor[i] && zbor[i] <= zbor[i+1]) {
+				
+			pravilni++;
+			
+			}
 			
 		}
-		
+		if (pravilni > 0) {
+		System.out.println(pravilni);
+		} else {
+			System.out.println("NOBEDEN");
+		}
 /* blokec ki preveri za vsak i;
 i-1 <= i <= i+1 
 myb začni z i = 1, konec na i = dolzina - 1
