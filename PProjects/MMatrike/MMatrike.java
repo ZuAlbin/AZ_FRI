@@ -2,44 +2,78 @@ import java.util.Scanner;
 
 public class MMatrike {
 	
-	public static int ( 
+	public static int[][] MMaker(int stVrst, int stStol, int[] log){
+		
+		int[][] matrika = new int[stVrst][stStol];
+		
+		int p = 0;
+		
+	    for (int i = 0; i < stVrst; i++){
+			for (int j = 0; j < stStol; j++) {
+				
+				matrika[i][j] = log[p];
+				p++;
+			}
+		}
+	return matrika;
+	}
 	
 	public static void main(String[] args) {
+		
 		Scanner sc = new Scanner(System.in);
 		
-		//n1 št vrstic mat1
-		//m1 št stolpcev mat1
-		int n1 = sc.nextInt();
-        int m1 = sc.nextInt();
+		int nP = sc.nextInt();
+        int mP = sc.nextInt();
 		
-		// št elementov v mat1
-		int num1 = m1 * n1;
+		int numP = nP * mP;
 		
-		int[][] mat1 = new int[n1][m1];
+		int[] elementiP = new int[numP];
 		
-		for (int i = 0; i < n1; i++){
-			for (int j = 0; j < m1; j++) {
-				
-				mat1[i][j] = sc.nextInt();
-				
-			}
+		for ( int i = 0; i < numP ; i++) {
 			
+			elementiP[i] = sc.nextInt();
 			
 		}
-	    for (int i = 0; i < n1; i++){
-			    for (int j = 0; j < m1; j++) {
 		
-		        System.out.print(mat1[i][j] + " ");
+		int[][] matP = MMaker(nP, mP, elementiP);
+		
+		matP = MMaker(nP, mP, elementiP);
+		
+		int nD = sc.nextInt();
+        int mD = sc.nextInt();
+		
+		int numD = nD * mD;
+		
+		int[] elementiD = new int[numD];
+		
+		for ( int i = 0; i < numD ; i++) {
+			
+			elementiD[i] = sc.nextInt();
+			
+		}
+		
+		int[][] matD = MMaker(nD, mD, elementiD);
+		
+		int[][] matOut = new int[nP][mD];
+		
+		for (int i = 0; i < mD; i++) {
+			for (int j = 0; j < nP; j++) {
+				for (int k = 0; k < nD; k++) {
+					matOut[i][j] += matP[i][k] * matD[k][j];
+				}
+			}
+		}
+		
+		for (int i = 0; i < nP; i++){
+			    for (int j = 0; j < mD; j++) {
+		
+		        System.out.print(matOut[i][j] + " ");
 				
 		
 				}
 				System.out.println();
 		}
 		
-		
-
 	}
-	
-	
 	
 }
