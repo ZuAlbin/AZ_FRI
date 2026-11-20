@@ -65,6 +65,13 @@ public class PPoker {
 
         // Make hands
         
+		String[][] allHands = new Sting;
+		
+		for (int i = 0; i <= numPlayers; i++) {
+			
+			String[] hand
+			
+		}
 
             
     }
